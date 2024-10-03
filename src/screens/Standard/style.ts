@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface ColorsChange {
   colorBg: 'pomodoro' | 'short' | 'long' | string
@@ -10,7 +9,7 @@ interface BgTextChange {
   colorTextBg: 'desactive' | 'active' | string
 }
 
-export const SafeArea = styled(SafeAreaView) <ColorsChange>`
+export const SafeArea = styled.View<ColorsChange>`
   flex: 1;
   ${(props => props.colorBg === 'pomodoro' && css`
     background-color: ${({ theme }) => theme.colors.pomodoro};
